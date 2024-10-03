@@ -23,7 +23,7 @@
         }
         .form-section {
             font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
+            font-size: 17px;
             flex: 1;
             max-width: 595px;
         }
@@ -40,8 +40,9 @@
         h1 {
             text-align: center;
             font-family: 'Montserrat', sans-serif;
-            font-size: 31px;
-            line-height: 30px;
+            font-size: 37px;
+            line-height: 36px;
+            color: #133850;
         }
         label {
             font-weight: bold;
@@ -53,6 +54,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
         }
         button {
             padding: 10px 15px;
@@ -63,7 +65,7 @@
             cursor: not-allowed;
             display: block;
             width: 100%;
-            height: 49px;
+            height: 50px;
             font-family: 'Montserrat', sans-serif;
         }
         button:disabled {
@@ -100,6 +102,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
             width: 100%;
         }
         .copy-button:disabled {
@@ -178,38 +181,58 @@
       <div class="form-section">
         <h1>Generador de firmas<br>
           Correo Dulmatesa</h1>
-        Para generar tu firma para el correo, rellena <strong>todos</strong>
-        los campos y pulsa el botón "Copiar firma al portapapeles". En la parte
-        derecha podrás ver una vista previa en tiempo real que te muestra cómo
-        quedará tu firma.<br>
+        Bienvenid@ al generador de firmas para correo de Dulmatesa. Para generar
+        tu firma, selecciona tu nombre y pulsa el botón verde "Copiar firma al
+        portapapeles".<br>
         <br>
-        <strong>Por favor, comprueba todos los datos antes de pulsar el botón.</strong><br>
+        Si lo deseas, puedes escribir un saludo que se mostrará automáticamente
+        en tus correos, justo encima de tu firma. En caso de que no quieras
+        incluir un saludo, simplemente no escribas nada.<br>
         <br>
-        <form id="signatureForm"> <label for="name">Nombre:</label> <input id="name"
-
-            placeholder="Tu nombre" required="" oninput="updateSignature()" type="text">
-          <label for="position">Cargo:</label> <input id="position" placeholder="Tu cargo"
-
-            required="" oninput="updateSignature()" type="text"> <label for="office">Sede:</label>
-          <select id="office" required="" onchange="updateSignature()">
+        En la parte derecha podrás ver una vista previa en tiempo real que te
+        muestra cómo quedará tu firma. <br>
+        <br>
+        <strong style="color:#133850">Por favor, selecciona tu nombre y pulsa el
+          botón verde "Copiar firma al portapapeles".<br>
+        </strong> <br>
+        <form id="signatureForm"> <label for="name" style="color:#133850">Nombre:</label>
+          <select id="name" required="" onchange="updateSignature()">
             <option value="" disabled="disabled" selected="selected">Selecciona
+              tu nombre</option>
+            <option value="Alejandro Silva">Alejandro Silva</option>
+            <option value="Ana Gutiérrez">Ana Gutiérrez</option>
+            <option value="Alfredo González">Alfredo González</option>
+            <option value="Esteban Tirado">Esteban Tirado</option>
+            <option value="Pablo Alonso">Pablo Alonso</option>
+            <option value="Raúl Castejón">Raúl Castejón</option>
+          </select>
+          <label for="position" style="display: none;">Cargo:</label> <input id="position"
+
+            placeholder="Tu cargo" required="" oninput="updateSignature()" style="display: none;"
+
+            type="text"> <label for="office" style="display: none;">Sede:</label>
+          <select style="display: none;" id="office" required="" onchange="updateSignature()">
+            <option style="display: none;" value="" disabled="disabled" selected="selected">Selecciona
               una sede</option>
             <option value="Sede Navarrés">Sede Navarrés</option>
             <option value="Sede Puente Genil">Sede Puente Genil</option>
             <option value="Oficinas Centrales / HQ">Oficinas Centrales / HQ</option>
           </select>
-          <label for="phone">Teléfono:</label> <input id="phone" placeholder="Tu teléfono"
+          <label for="phone" style="display: none;">Teléfono:</label> <input id="phone"
 
-            required="" oninput="updateSignature()" type="number"> <label for="email">Correo
+            placeholder="Tu teléfono" required="" oninput="updateSignature()" style="display: none;"
+
+            type="number"> <label for="email" style="display: none;">Correo
             electrónico:</label> <input id="email" placeholder="Tu correo electrónico"
 
-            required="" oninput="updateSignature()" type="email"><span id="emailError"></span>
-          <label for="email">Saludo al final del correo (opcional)</label> <input
+            required="" oninput="updateSignature()" style="display: none;" type="email"><span
 
-            id="saludo" placeholder="Tu saludo. Si no quieres incluir saludo, déjalo vacío."
+            id="emailError"></span> <label style="color:#133850" for="saludo"><br>
+            Saludo encima de la firma (opcional)</label> <input id="saludo" placeholder="Tu saludo. Si no quieres incluir uno, déjalo vacío."
 
-            required="" oninput="updateSignature()" type="email"><span id="emailError"></span>
-        </form>
+            required="" oninput="updateSignature()" style="width: 530px;" type="text"><span
+
+            id="emailError"></span> </form>
         <div class="output">
           <div class="signature" id="signatureOutput" style="visibility:hidden"></div>
           <button class="copy-button" id="copyButton" onclick="copyToClipboard()"
@@ -226,6 +249,8 @@
       </div>
     </div>
     <script>
+
+        // Función para actualizar firma
         function updateSignature() {
             const name = document.getElementById('name').value || 'Nombre';
             const position = document.getElementById('position').value || 'Cargo';
@@ -249,7 +274,7 @@
                     address = 'Partida de la Traviesa s/n, 46823 Navarrés, Valencia';
                     break;
                 case 'Sede Puente Genil':
-                    address = 'Ctra. Estepa Guadix, Km 12.8 14.500 Puente Genil (Córdoba)';
+                    address = 'Ctra. Estepa Guadix, Km 12.8 - 14.500 Puente Genil (Córdoba)';
                     break;
                 case 'Oficinas Centrales / HQ':               
                     address = 'C/ Jaén, 9. Edificio Galia, 3º Of. 14, Parque Comercial Málaga Nostrum, 29004, Málaga';
@@ -257,8 +282,76 @@
                 default:
                 address = 'Sede';
             }
+          
+           // Cargo según el nombre
+           let positionValue;
+           let oficina;
+           let direccion;
+           let telefono;
+           let correo;
+                    
+            // Listado de usuarios
+            switch (name) {
+                case 'Alejandro Silva':
+                    positionValue = 'Responsable de Departamento IT';
+                    oficina = 'Oficinas Centrales / HQ';
+                    telefono = '636514538';
+                    correo = 'alejandro.silva@dulmatesa.es';
+                    break;
+                case 'Alfredo González':
+                    positionValue = 'Director Financiero';
+                    oficina = 'Oficinas Centrales / HQ';
+                    telefono = '606950021';
+                    correo = 'alfredo.gonzalez@dulmatesa.es';
+                    break;
+                case 'Ana Gutiérrez':
+                    positionValue = 'Jefa de Calidad';
+                    oficina = 'Sede Puente Genil';
+                    telefono = '652914552';
+                    correo = 'ana.gutierrez@dulmatesa.es';
+                    break;               
+                case 'Esteban Tirado':               
+                    positionValue = 'Jefe Logística';
+                    oficina = 'Sede Navarrés';
+                    correo = 'esteban.tirado@dulmatesa.es';
+                    telefono = '658877528';
+                    break;
+                case 'Pablo Alonso':
+                    positionValue = 'Director RR.HH.';
+                    oficina = 'Oficinas Centrales / HQ';
+                    telefono = '660970356';
+                    correo = 'pablo.alonso@dulmatesa.es';
+                    break;
+                case 'Raúl Castejón':               
+                    positionValue = 'Controller';
+                    oficina = 'Oficinas Centrales / HQ';
+                    correo = 'raul.castejon@dulmatesa.es';
+                    telefono = '699089050';
+                    break;
+                default:
+                positionValue = 'Cargo';
+                oficina = 'Oficina';
+                telefono = 'Teléfono';
+                correo = 'Correo';
+            }
+          
+          // Dirección según sede
+          switch (oficina) {
+           case 'Sede Navarrés':
+           address = 'Partida de la Traviesa s/n, 46823 Navarrés, Valencia';
+           break;
+           case 'Sede Puente Genil':
+           address = 'Ctra. Estepa Guadix, Km 12.8 - 14.500 Puente Genil (Córdoba)';
+           break;
+           case 'Oficinas Centrales / HQ':
+           address = 'C/ Jaén, 9. Edificio Galia, 3º Of. 14, Parque Comercial Málaga Nostrum, 29004, Málaga';    
+           break;
+           default:
+           address = 'Dirección';
+           }
 
-            const signatureHTML = `
+          // Código HTML generado 
+          const signatureHTML = `
                 <span style="font-family: 'Montserrat', sans-serif;">${saludo}</span>
                 <div style="font-family: 'Montserrat', sans-serif; color: #333; width: 595px;">
                 <table style="font-family: 'Montserrat', sans-serif; width: 570px;" border="0" cellspacing="0" cellpadding="0">
@@ -268,22 +361,21 @@
                         <img src="https://i.postimg.cc/PJM6gvyZ/Dulmatesa-logo.png" alt="Logo" style="width: 200px; margin-bottom: 20px;">
                     </a><br></td></tr>
                     <tr><td style="line-height: 13px;"><strong style="font-family: 'Montserrat', sans-serif; font-size: 11pt; color: #133850;">${name}</strong><br></td></tr>
-                    <tr><td style="line-height: 12px;"><strong style="font-family: 'Montserrat', sans-serif; font-size: 10pt; color: #133850;">${position}</strong><br></td></tr>
-                    <tr><td><span style="font-family: 'Montserrat', sans-serif; font-size: 9pt; color: #133850;">${office}</span><br><br></td></tr>
-                    <tr><td height:15px;><tr></td></tr>
+                    <tr><td style="line-height: 12px;"><strong style="font-family: 'Montserrat', sans-serif; font-size: 10pt; color: #133850;">${positionValue}</strong><br></td></tr>
+                    <tr><td><span style="font-family: 'Montserrat', sans-serif; font-size: 9pt; color: #133850;">${oficina}</span><br><br></td></tr>
+                    <tr><td height:15px;></td></tr>
                     <tr><td><div style="font-family: 'Montserrat', sans-serif; font-size: 9pt; color: #919191; margin-top: 10px;">
-                        <img src="https://i.postimg.cc/4NSjL4VL/telf-dulma.png" alt="Teléfono" style="vertical-align: middle; margin-right: 8px;">
-                        <a href="tel:${phone}" style="font-family: 'Montserrat', sans-serif; color: #919191; text-decoration: none;">${phone}</a>
+                        <img src="https://i.postimg.cc/4NSjL4VL/telf-dulma.png" alt="Teléfono" style="vertical-align: middle; margin-right: 9px;">
+                        <a href="tel:${telefono}" style="font-family: 'Montserrat', sans-serif; color: #919191; text-decoration: none;">${telefono}</a>
                     </div></td></tr>
                     <tr><td>
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 9pt; color: #919191; margin-top: 8px;">
                         <img src="https://i.postimg.cc/Kj9CyxVY/mail-dulma.png" alt="Email" style="vertical-align: middle; margin-right: 8px;">
-                        <a href="mailto:${email}" style="font-family: 'Montserrat', sans-serif; color: #919191; text-decoration: none;">${email}</a>
+                        <a href="mailto:${correo}" style="font-family: 'Montserrat', sans-serif; color: #919191; text-decoration: none;">${correo}</a>
                     </div></td></tr>
                     <tr><td>
                     <div style="font-family: 'Montserrat', sans-serif; font-size: 9pt; color: #919191; margin-top: 10px;">
-                        <img src="https://i.postimg.cc/bY7ms6cJ/ubi-dulma.png" alt="Dirección" style="vertical-align: middle; margin-right: 8px;">
-                        ${address}
+                        <img src="https://i.postimg.cc/bY7ms6cJ/ubi-dulma.png" alt="Dirección" style="vertical-align: middle; margin-right: 13px;">${address}
                     </div></td></tr>
                     <tr><td>
                     <div style="margin-top: 10px;">
@@ -295,7 +387,7 @@
                     </td></tr>
                     <tr><td>
                     <div style="margin-top: 10px;">
-                        <img src="https://martacaballero.com/wp-content/uploads/2020/08/lopez-1.png" alt="Logo López 1" style="width: 100px; margin-right: 10px;">
+                        <img src="https://martacaballero.com/wp-content/uploads/2020/08/lopez-1.png" alt="Productos López" style="width: 100px; margin-right: 10px;">
                         <img src="https://martacaballero.com/wp-content/uploads/2020/08/ProductosLopez.png" alt="Productos López" style="width: 100px;">
                     </div></td></tr>
                     </tbody>
@@ -324,12 +416,9 @@
             document.getElementById('signatureOutput').innerText = signatureHTML.trim();
 
             // Habilitar el botón de copiar al portapapeles solo si todos los campos están llenos y válidos
-            const allFieldsFilled = Array.from(document.querySelectorAll('#name, #position, #office, #phone, #email'))
+            const allFieldsFilled = Array.from(document.querySelectorAll('#name'))
                 .every(field => field.value.trim() !== '');
-            const isEmailValid = validateEmail(email);
-            const copyButton = document.getElementById('copyButton');
-            const signatureOutput = document.getElementById('signatureOutput');
-            if (allFieldsFilled && isEmailValid) {
+            if (allFieldsFilled) {
                 copyButton.classList.add('enabled');
                 copyButton.disabled = false;
                 signatureOutput.classList.add('selectable'); // Habilitar selección de texto
@@ -339,8 +428,10 @@
                 signatureOutput.classList.remove('selectable'); // Deshabilitar selección de texto
             }
         }
-
+      
+        // Declaración de función para copiar al portapapeles
         function copyToClipboard() {
+            window.scrollTo(0, document.body.scrollHeight); // Bajamos abajo del todo
             const signaturePreview = document.getElementById('signaturePreview'); // Selecciona el contenedor de vista previa
             const range = document.createRange(); // Crea un nuevo rango
             range.selectNodeContents(signaturePreview); // Selecciona todo el contenido del contenedor
@@ -354,12 +445,13 @@
             const message = document.getElementById('copyMessage');
             message.style.display = 'block';
 
-            // Oculta el mensaje después de 5 segundos
+            // Oculta el mensaje después de 7 segundos
             setTimeout(() => {
                 message.style.display = 'none';
-            }, 5000);
+            }, 7000);
         }
 
+        // Validar email
         function validateEmail(email) {
             const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return re.test(String(email).toLowerCase());
