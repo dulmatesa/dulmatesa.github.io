@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generador de Firmas para Correo</title>
+    <title>Dulmatesa - Generador de firmas para correo</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
@@ -203,7 +203,6 @@
             <option value="Ana Gutiérrez">Ana Gutiérrez</option>
             <option value="Alfredo González">Alfredo González</option>
             <option value="Esteban Tirado">Esteban Tirado</option>
-            <option value="Javier Jaime">Javier Jaime</option>
             <option value="Pablo Alonso">Pablo Alonso</option>
             <option value="Raúl Castejón">Raúl Castejón</option>
           </select>
@@ -317,12 +316,6 @@
                     correo = 'esteban.tirado@dulmatesa.es';
                     telefono = '658877528';
                     break;
-                case 'Javier Jaime':               
-                    positionValue = 'Controller';
-                    oficina = 'Oficinas Centrales / HQ';
-                    correo = 'javier.jaime@dulmatesa.es';
-                    telefono = '608656626';
-                    break;
                 case 'Pablo Alonso':
                     positionValue = 'Director RR.HH.';
                     oficina = 'Oficinas Centrales / HQ';
@@ -361,37 +354,63 @@
           const signatureHTML = `
                 <span style="font-family: 'Montserrat', sans-serif;">${saludo}</span>
                 <div style="font-family: 'Montserrat', sans-serif; color: #333; width: 595px;">
-                <table style="font-family: 'Montserrat', sans-serif; width: 570px;" border="0" cellspacing="0" cellpadding="0">
+                <table style="font-family: 'Montserrat', sans-serif; width: 570px;" border="0" cellspacing="0" cellpadding="0";>
                 <br>
                 <tbody>
                     <tr><td><a href="https://www.dulmatesa.es" target="_blank">
                         <img src="https://i.postimg.cc/PJM6gvyZ/Dulmatesa-logo.png" alt="Logo" style="width: 200px; margin-bottom: 20px;">
-                    </a><br></td></tr>
+                    </a></td></tr>
+
                     <tr><td style="line-height: 13px;"><strong style="font-family: 'Montserrat', sans-serif; font-size: 11pt; color: #133850;">${name}</strong><br></td></tr>
                     <tr><td style="line-height: 12px;"><strong style="font-family: 'Montserrat', sans-serif; font-size: 10pt; color: #133850;">${positionValue}</strong><br></td></tr>
-                    <tr><td><span style="font-family: 'Montserrat', sans-serif; font-size: 9pt; color: #133850;">${oficina}</span><br><br></td></tr>
-                    <tr><td height:15px;></td></tr>
-                    <tr><td><div style="font-family: 'Montserrat', sans-serif; font-size: 9pt; color: #919191; margin-top: 10px;">
-                        <img src="https://i.postimg.cc/4NSjL4VL/telf-dulma.png" alt="Teléfono" style="vertical-align: middle; margin-right: 9px;">
-                        <a href="tel:${telefono}" style="font-family: 'Montserrat', sans-serif; color: #919191; text-decoration: none;">${telefono}</a>
-                    </div></td></tr>
-                    <tr><td>
-                    <div style="font-family: 'Montserrat', sans-serif; font-size: 9pt; color: #919191; margin-top: 8px;">
-                        <img src="https://i.postimg.cc/Kj9CyxVY/mail-dulma.png" alt="Email" style="vertical-align: middle; margin-right: 8px;">
-                        <a href="mailto:${correo}" style="font-family: 'Montserrat', sans-serif; color: #919191; text-decoration: none;">${correo}</a>
-                    </div></td></tr>
-                    <tr><td>
-                    <div style="font-family: 'Montserrat', sans-serif; font-size: 9pt; color: #919191; margin-top: 10px;">
-                        <img src="https://i.postimg.cc/bY7ms6cJ/ubi-dulma.png" alt="Dirección" style="vertical-align: middle; margin-right: 13px;">${address}
-                    </div></td></tr>
-                    <tr><td>
-                    <div style="margin-top: 10px;">
-                        <img src="https://i.postimg.cc/NFJjFyLq/nueva-web.png" alt="Nueva Web" style="vertical-align: middle; margin-right: 4px; width: 17px; height: 17px;">
-                        <a href="https://www.dulmatesa.es" style="font-family: 'Montserrat', sans-serif; color: #0C96D4; text-decoration: none; font-weight: bold; font-size: 13px;">Visita nuestra web: www.dulmatesa.es</a>
-                    </div></td></tr>
-                    <tr><td>
+                    <tr><td><span style="font-family: 'Montserrat', sans-serif; font-size: 9pt; color: #133850;">${oficina}</span></td></tr>
+                    </table>
+
+                    <table cellspacing="0" cellpadding="0" border="0">
+                    <tr><td width="570px" height="20px"></td></tr>
+                    </table>
+
+                    <table cellspacing="0" cellpadding="0" border="0">
+                    <tr><td style="padding-right: 10px; vertical-align: middle;">
+                        <img src="https://i.postimg.cc/4NSjL4VL/telf-dulma.png" alt="Teléfono" style="display: block;">
+                    </td>
+                    <td width="545px" style="font-family: Montserrat, sans-serif; font-size: 9pt; color: #919191; vertical-align: middle;">
+                        <a href="tel:${telefono}" style="font-family: 'Montserrat', sans-serif; color: #919191; font-size: 9pt; text-decoration: none;">${telefono}</a>
+                    </td></tr><td height="10px"></td></table>
+                    
+
+                    <table cellspacing="0" cellpadding="0" border="0">
+                    <tr><td style="padding-right: 9px; vertical-align: middle;">
+                        <img src="https://i.postimg.cc/Kj9CyxVY/mail-dulma.png" alt="Correo" style="display: block;">
+                    </td>
+                    <td width="545px" style="font-family: Montserrat, sans-serif; font-size: 9pt; color: #919191; vertical-align: middle;">
+                        <a href="mailto:${correo}" style="font-family: 'Montserrat', sans-serif; color: #919191; font-size: 9pt; text-decoration: none;">${correo}</a>
+                    </td></tr><td height="10px"></td></table>
+
+
+                    <table cellspacing="0" cellpadding="0" border="0">
+                    <tr><td style="padding-right: 11px; vertical-align: middle;">
+                        <img align="absmiddle" src="https://i.postimg.cc/bY7ms6cJ/ubi-dulma.png" alt="Dirección" style="display:block;">
+                    </td>
+                    <td width="545px" style="font-family: Montserrat, sans-serif; font-size: 9pt; color: #919191; vertical-align: middle;">
+                        <span style="font-family: 'Montserrat', sans-serif; color: #919191; font-size: 9pt; text-decoration: none;">${address}</span>
+                    </td></tr><td height="10px"></td></table>
+                    
+
+                    <table cellspacing="0" cellpadding="0" border="0">
+                    <tr><td style="padding-right: 8px; vertical-align: middle;">
+                        <img width=18px src="https://i.postimg.cc/NFJjFyLq/nueva-web.png" alt="Nueva web de Dulmatesa" style="display: block;">
+                    </td>
+                    <td width="544px" style="font-family: Montserrat, sans-serif; font-size: 10pt; color: #0C96D4; vertical-align: middle;">
+                        <a href="https://www.dulmatesa.es" style="font-family: 'Montserrat', sans-serif; color: #0C96D4; font-size: 10pt; font-weight: bold; text-decoration: none;">Visita nuestra web: www.dulmatesa.es</a>
+                    </td></tr></table>
+                    
+                    <table width="570px" cellspacing="0" cellpadding="0" border="0">
+                    <tr><td width="570px" height="10px">
                     <div style="width:570px; height:2px; border-bottom: 2px solid #0C96D4; margin-top:10px; margin-bottom:5px;"></div>
-                    </td></tr>
+                    </tr></td></table>
+                    
+                    
                     <tr><td>
                     <div style="margin-top: 10px;">
                         <img src="https://martacaballero.com/wp-content/uploads/2020/08/lopez-1.png" alt="Productos López" style="width: 100px; margin-right: 10px;">
@@ -472,6 +491,5 @@
         // Actualizar vista previa al cargar la página
         updateSignature();
     </script>
-    
   </body>
 </html>
