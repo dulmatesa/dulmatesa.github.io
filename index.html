@@ -9,7 +9,6 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            margin: 20px;
             background-color: #f4f4f4;
         }
         .container {
@@ -76,9 +75,6 @@
             background-color: #0056b3;
             cursor: pointer;
         }
-        .output {
-            margin-top: 20px;
-        }
         .signature {
             margin-top: 1px;
             padding: 1px;
@@ -132,48 +128,16 @@
             font-weight: bold;
             font-size: 12px; /* Tamaño de letra ajustado */
         }
-        .extra-info img {
-            vertical-align: middle;
-            width: 19px; /* Tamaño del icono ajustado */
-            height: 19px; /* Tamaño del icono ajustado */
-        }
-        .preview-section h2 {
-            font-size: 18px;
-        }
         .preview-container {
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 10px;
         }
-        #emailError {
-            color: black;
-            display: none;
-        }
         .extra-info p {
             margin: 10px 0;
             font-size: 11px; /* Tamaño de letra ajustado */
         }
-        .extra-info a {
-            color: #0C96D4;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .recycling-wrapper {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .recycling-wrapper img {
-            width: 15px; /* Tamaño del icono ajustado */
-            height: 15px; /* Tamaño del icono ajustado */
-            margin-right: 10px;
-        }
-        .contact-info a {
-            color: #808080;
-            text-decoration: none;
-            font-size: 9px;
-            display: block;
-        }
+
     </style>
   </head>
   <body>
@@ -363,45 +327,45 @@
 
                     <tr><td style="line-height: 13px;"><strong style="font-family: 'Montserrat', sans-serif; font-size: 11pt; color: #133850;">${name}</strong><br></td></tr>
                     <tr><td style="line-height: 12px;"><strong style="font-family: 'Montserrat', sans-serif; font-size: 10pt; color: #133850;">${positionValue}</strong><br></td></tr>
-                    <tr><td><span style="font-family: 'Montserrat', sans-serif; font-size: 9pt; color: #133850;">${oficina}</span></td></tr>
+                    <tr><td style="line-height: 20px; font-family: 'Montserrat', sans-serif; font-size: 9pt; color: #133850;">${oficina}</td></tr>
                     </table>
 
                     <table cellspacing="0" cellpadding="0" border="0">
-                    <tr><td width="570px" height="20px"></td></tr>
+                    <tr><td width="570px" height="10px" style="height: 10px; vertical-align: middle;"></td></tr>
                     </table>
 
                     <table cellspacing="0" cellpadding="0" border="0">
-                    <tr><td style="padding-right: 10px; vertical-align: middle;">
+                    <tr><td width=0px style="padding-right: 10px; vertical-align: middle;">
                         <img src="https://i.postimg.cc/4NSjL4VL/telf-dulma.png" alt="Teléfono" style="display: block;">
                     </td>
-                    <td width="545px" style="font-family: Montserrat, sans-serif; font-size: 9pt; color: #919191; vertical-align: middle;">
+                    <td width="545px" height="25px" style="font-family: Montserrat, sans-serif; font-size: 9pt; color: #919191; vertical-align: middle;">
                         <a href="tel:${telefono}" style="font-family: 'Montserrat', sans-serif; color: #919191; font-size: 9pt; text-decoration: none;">${telefono}</a>
-                    </td></tr><td height="10px"></td></table>
+                    </td></tr></table>
                     
 
                     <table cellspacing="0" cellpadding="0" border="0">
-                    <tr><td style="padding-right: 9px; vertical-align: middle;">
+                    <tr><td width=0px style="padding-right: 9px; vertical-align: middle;">
                         <img src="https://i.postimg.cc/Kj9CyxVY/mail-dulma.png" alt="Correo" style="display: block;">
                     </td>
-                    <td width="545px" style="font-family: Montserrat, sans-serif; font-size: 9pt; color: #919191; vertical-align: middle;">
+                    <td width="545px" height="25px" style="font-family: Montserrat, sans-serif; font-size: 9pt; color: #919191; vertical-align: middle;">
                         <a href="mailto:${correo}" style="font-family: 'Montserrat', sans-serif; color: #919191; font-size: 9pt; text-decoration: none;">${correo}</a>
-                    </td></tr><td height="10px"></td></table>
+                    </td></tr></table>
 
 
                     <table cellspacing="0" cellpadding="0" border="0">
-                    <tr><td style="padding-right: 11px; vertical-align: middle;">
+                    <tr><td width=0px style="padding-right: 11px; vertical-align: middle;">
                         <img align="absmiddle" src="https://i.postimg.cc/bY7ms6cJ/ubi-dulma.png" alt="Dirección" style="display:block;">
                     </td>
-                    <td width="545px" style="font-family: Montserrat, sans-serif; font-size: 9pt; color: #919191; vertical-align: middle;">
+                    <td width="545px" height="25px" style="font-family: Montserrat, sans-serif; font-size: 9pt; color: #919191; vertical-align: middle;">
                         <span style="font-family: 'Montserrat', sans-serif; color: #919191; font-size: 9pt; text-decoration: none;">${address}</span>
-                    </td></tr><td height="10px"></td></table>
+                    </td></tr></table>
                     
 
                     <table cellspacing="0" cellpadding="0" border="0">
-                    <tr><td style="padding-right: 8px; vertical-align: middle;">
+                    <tr><td width=0px style="padding-right: 8px; vertical-align: middle;">
                         <img width=18px src="https://i.postimg.cc/NFJjFyLq/nueva-web.png" alt="Nueva web de Dulmatesa" style="display: block;">
                     </td>
-                    <td width="544px" style="font-family: Montserrat, sans-serif; font-size: 10pt; color: #0C96D4; vertical-align: middle;">
+                    <td width="544px" height="25px" style="font-family: Montserrat, sans-serif; font-size: 10pt; color: #0C96D4; vertical-align: middle;">
                         <a href="https://www.dulmatesa.es" style="font-family: 'Montserrat', sans-serif; color: #0C96D4; font-size: 10pt; font-weight: bold; text-decoration: none;">Visita nuestra web: www.dulmatesa.es</a>
                     </td></tr></table>
                     
@@ -418,11 +382,11 @@
                     </div></td></tr>
                     </tbody>
                         </table> 
-                    <div class="extra-info" style="margin-top: 15px;">
+                    <div style="margin-top: 15px;">
                         <table style="width: 570px;" border="0">
                             <tbody>
                                 <tr>
-                                    <td style="width: 20px;"> <img src="https://martacaballero.com/wp-content/uploads/2020/07/reciclado.png" alt="Reciclado" style="vertical-align: middle;"></td>
+                                    <td style="width: 20px;"> <img width="20px" src="https://martacaballero.com/wp-content/uploads/2020/07/reciclado.png" alt="Reciclado" style="vertical-align: middle;"></td>
                                     <td style="width: 570px;"><p style="margin: 10px 0; font-family: 'Montserrat', sans-serif; font-size: 8pt; color: #919191;">Cuidemos el medio ambiente. Por favor no imprima este e-mail si no es necesario.</p></td>
                                 </tr>
                             </tbody>
@@ -491,5 +455,6 @@
         // Actualizar vista previa al cargar la página
         updateSignature();
     </script>
+    
   </body>
 </html>
