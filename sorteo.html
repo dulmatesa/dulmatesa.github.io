@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo iPhone 16</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-color: #000000;
+        }
+
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #555;
+            transition: opacity 0.5s ease-out;
+        }
+
+        iframe {
+            opacity: 0;
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            transition: opacity 0.5s ease-in;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="font-family: 'Montserrat', sans-serif; font-size: 20pt;" color: #ffffff; id="preloader">Accediendo al sorteo. Un momento, por favor...</div>
+
+    <iframe id="iframe" 
+        src="https://dulmatesacom-my.sharepoint.com/personal/alejandro_silva_dulmatesa_es/_layouts/15/Doc.aspx?sourcedoc={1cdd0237-928d-4991-9cd8-8e4310568cce}&action=embedview&wdAr=1.2941176470588236&wdHideHeaders=True">
+    </iframe>
+
+    <script>
+        window.onload = function () {
+            setTimeout(() => {
+                document.getElementById("preloader").style.opacity = "0"; 
+                document.getElementById("iframe").style.opacity = "1"; 
+                setTimeout(() => document.getElementById("preloader").style.display = "none", 500);
+            }, 3000); // Espera 1s antes de hacer la transición
+        };
+    </script>
+
+</body>
+</html>
