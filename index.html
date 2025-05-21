@@ -202,8 +202,8 @@
         <h1>Generador de firmas<br>
           Correo Dulmatesa</h1>
         Bienvenid@ al generador de firmas para correo de Dulmatesa. Para generar
-        tu firma, selecciona tu nombre y pulsa el botón verde "Copiar firma al
-        portapapeles".<br>
+        tu firma, selecciona tu nombre y pulsa el botón verde
+        "Copiar firma al portapapeles".<br>
         <br>
         Si lo deseas, puedes escribir un saludo que se mostrará automáticamente
         en tus correos, justo encima de tu firma. En caso de que no quieras
@@ -359,7 +359,6 @@
             const phone = document.getElementById('phone').value || 'Teléfono';
             const email = document.getElementById('email').value || 'Email';
             const saludo = document.getElementById('saludo').value.trim();
-            const saludoConSaltos = saludo ? saludo + '<br><br>' : '';
 
             // Validación del correo electrónico
             const emailError = document.getElementById('emailError');
@@ -946,7 +945,7 @@
 
           // Código HTML generado 
           const signatureHTML = `
-<span style="font-family: 'Montserrat', sans-serif;">${saludoConSaltos}</span>
+<span style="font-family: 'Montserrat', sans-serif;">${saludo}</span>
 <table style="width: 595px; font-family: 'Montserrat', sans-serif; color: #333;" cellpadding="0" cellspacing="0" border="0">
 <tr><td>
   <table style="width: 570px;" cellpadding="0" cellspacing="0" border="0">
@@ -1080,6 +1079,5 @@
         // Actualizar vista previa al cargar la página
         updateSignature();
     </script>
-    
   </body>
 </html>
