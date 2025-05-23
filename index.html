@@ -4,9 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dulmatesa - Generador de firmas para correo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap"
-
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Estilos generales para la aplicación web */
         body {
@@ -308,9 +306,7 @@
             <option value="Zaira Burgos">Zaira Burgos</option>
           </select>
           <label for="position" style="display: none;">Cargo:</label> <input id="position"
-
             placeholder="Tu cargo" required="" oninput="updateSignature()" style="display: none;"
-
             type="text"> <label for="office" style="display: none;">Sede:</label>
           <select style="display: none;" id="office" required="" onchange="updateSignature()">
             <option style="display: none;" value="" disabled="disabled" selected="selected">Selecciona
@@ -320,30 +316,23 @@
             <option value="Oficinas Centrales / HQ">Oficinas Centrales / HQ</option>
           </select>
           <label for="phone" style="display: none;">Teléfono:</label> <input id="phone"
-
             placeholder="Tu teléfono" required="" oninput="updateSignature()" style="display: none;"
-
             type="number"> <label for="email" style="display: none;">Correo
             electrónico:</label> <input id="email" placeholder="Tu correo electrónico"
-
             required="" oninput="updateSignature()" style="display: none;" type="email"><span
-
             id="emailError"></span> <label style="color:#133850" for="saludo"><br>
             Saludo encima de la firma (opcional)</label> <input id="saludo" placeholder="Tu saludo. Si no quieres incluir uno, déjalo vacío."
-
             required="" oninput="updateSignature()" style="width: 96%;" type="text"><span
-
             id="emailError"></span> </form>
         <div class="output">
           <div class="signature" id="signatureOutput" style="visibility:hidden"></div>
           <button class="copy-button" id="copyButton" onclick="copyToClipboard()"
-
             disabled="disabled">Copiar firma al portapapeles</button>
           <div class="message" id="copyMessage"><strong>Firma copiada al
               portapapeles. Ahora pégala en Outlook.</strong></div>
         </div>
       </div>
-      <div class="preview-section"> 
+      <div class="preview-section">
         <div class="preview-container">
           <div class="preview" id="signaturePreview"></div>
         </div>
@@ -972,34 +961,34 @@
                     <td>
                         <table cellpadding="0" cellspacing="0" border="0" style="width:100%; font-family: 'Montserrat', sans-serif, Arial, Helvetica; font-size: 9pt; color: #828282;">
                             <tr>
-                                <td width="20" style="vertical-align: middle; padding-right: 7px;">
+                                <td width="20" style="vertical-align: middle; padding-right: 7px; padding-bottom: 2px;">
                                     <img src="https://www.dulmatesa.es/img/telf-dulma.png" alt="Teléfono" width="15" height="15" style="display:block; border:0; max-width:15px; height:auto;">
                                 </td>
-                                <td style="vertical-align: middle; padding-top:2px; padding-bottom:2px;">
+                                <td style="vertical-align: middle; padding-bottom: 2px;">
                                     <a href="tel:${telefono}" style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #828282; font-size: 9pt; text-decoration: none;"><span style="color: #828282;">${telefono}</span></a>
                                 </td>
                             </tr>
                             <tr>
-                                <td width="20" style="vertical-align: middle; padding-right: 6px;">
+                                <td width="20" style="vertical-align: middle; padding-right: 6px; padding-bottom: 2px;">
                                     <img src="https://www.dulmatesa.es/img/mail-dulma.png" alt="Correo" width="15" height="15" style="display:block; border:0; max-width:15px; height:auto;">
                                 </td>
-                                <td style="vertical-align: middle; padding-top:2px; padding-bottom:2px;">
+                                <td style="vertical-align: middle; padding-bottom: 2px;">
                                     <a href="mailto:${correo}" style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #828282; font-size: 9pt; text-decoration: none;"><span style="color: #828282;">${correo}</span></a>
                                 </td>
                             </tr>
                             <tr>
-                                <td width="20" style="vertical-align: middle; padding-right: 7px;">
+                                <td width="20" style="vertical-align: middle; padding-right: 7px; padding-bottom: 2px;">
                                     <img src="https://www.dulmatesa.es/img/ubi-dulma.png" alt="Dirección" width="15" height="15" style="display:block; border:0; max-width:15px; height:auto;">
                                 </td>
-                                <td style="vertical-align: middle; padding-top:2px; padding-bottom:2px;">
+                                <td style="vertical-align: middle; padding-bottom: 2px;">
                                     <span style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #828282; font-size: 9pt; text-decoration: none;">${address}</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td width="20" style="vertical-align: middle; padding-right: 5px;">
+                                <td width="20" style="vertical-align: middle; padding-right: 5px; padding-bottom: 2px;">
                                     <img src="https://www.dulmatesa.es/img/nueva-web.png" alt="Web Dulmatesa" width="18" height="18" style="display:block; border:0; max-width:18px; height:auto;">
                                 </td>
-                                <td style="vertical-align: middle; padding-top:2px; padding-bottom:2px;">
+                                <td style="vertical-align: middle; padding-bottom: 2px;">
                                     <a href="https://www.dulmatesa.es" style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #0C96D4; font-size: 10pt; font-weight: bold; text-decoration: none;"><span style="color: #0C96D4;">Visita nuestra web: www.dulmatesa.es</span></a>
                                 </td>
                             </tr>
