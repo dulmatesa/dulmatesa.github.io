@@ -4,9 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dulmatesa - Generador de firmas para correo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap"
-
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Estilos generales para la aplicación web */
         body {
@@ -226,7 +224,7 @@
             <option value="Alfredo González">Alfredo González</option>
             <option value="Álvaro García">Álvaro García</option>
             <option value="Ana Cáceres">Ana Cáceres</option>
-            <option value="Ana Gutiérrez">Ana Gutiérrez </option>
+            <option value="Ana Gutiérrez">Ana Gutiérrez</option>
             <option value="Ana María García">Ana María García</option>
             <option value="Ana Moral">Ana Moral</option>
             <option value="Ana Murcia">Ana Murcia</option>
@@ -308,9 +306,7 @@
             <option value="Zaira Burgos">Zaira Burgos</option>
           </select>
           <label for="position" style="display: none;">Cargo:</label> <input id="position"
-
             placeholder="Tu cargo" required="" oninput="updateSignature()" style="display: none;"
-
             type="text"> <label for="office" style="display: none;">Sede:</label>
           <select style="display: none;" id="office" required="" onchange="updateSignature()">
             <option style="display: none;" value="" disabled="disabled" selected="selected">Selecciona
@@ -320,30 +316,23 @@
             <option value="Oficinas Centrales / HQ">Oficinas Centrales / HQ</option>
           </select>
           <label for="phone" style="display: none;">Teléfono:</label> <input id="phone"
-
             placeholder="Tu teléfono" required="" oninput="updateSignature()" style="display: none;"
-
             type="number"> <label for="email" style="display: none;">Correo
             electrónico:</label> <input id="email" placeholder="Tu correo electrónico"
-
             required="" oninput="updateSignature()" style="display: none;" type="email"><span
-
             id="emailError"></span> <label style="color:#133850" for="saludo"><br>
             Saludo encima de la firma (opcional)</label> <input id="saludo" placeholder="Tu saludo. Si no quieres incluir uno, déjalo vacío."
-
             required="" oninput="updateSignature()" style="width: 96%;" type="text"><span
-
             id="emailError"></span> </form>
         <div class="output">
           <div class="signature" id="signatureOutput" style="visibility:hidden"></div>
           <button class="copy-button" id="copyButton" onclick="copyToClipboard()"
-
             disabled="disabled">Copiar firma al portapapeles</button>
           <div class="message" id="copyMessage"><strong>Firma copiada al
               portapapeles. Ahora pégala en Outlook.</strong></div>
         </div>
       </div>
-      <div class="preview-section"> 
+      <div class="preview-section">
         <div class="preview-container">
           <div class="preview" id="signaturePreview"></div>
         </div>
@@ -945,10 +934,10 @@
 
           // Código HTML generado optimizado para email (inline CSS)
           const signatureHTML = `
-            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="min-width:320px; max-width:600px; font-family: 'Montserrat', sans-serif, Arial, Helvetica; font-size:11pt; color:#333333;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="min-width:320px; max-width:600px; font-family: 'Montserrat', sans-serif, Arial, Helvetica; color:#333333;">
                 <tr>
                     <td style="padding-bottom: 5px;">
-                        <span style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; font-size: 11pt; color: #333333; line-height: 1.2;">${saludo}</span>
+                        <span style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; font-size: 11pt; color: #333333; line-height: 1.2; display: block; mso-line-height-rule: exactly;">${saludo}</span>
                     </td>
                 </tr>
                 <tr>
@@ -959,14 +948,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; font-size: 11pt; color: #133850; line-height: 1.2;">
-                        <strong>${name}</strong><br>
-                        <strong style="font-size: 10pt;">${positionValue}</strong><br>
-                        <span style="font-size: 9pt;">${oficina}</span>
+                    <td style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #133850;">
+                        <span style="font-size: 11pt; font-weight: bold; line-height: 14px; display: block; mso-line-height-rule: exactly;">${name}</span>
+                        <span style="font-size: 10pt; font-weight: bold; line-height: 13px; display: block; mso-line-height-rule: exactly;">${positionValue}</span>
+                        <span style="font-size: 9pt; line-height: 12px; display: block; mso-line-height-rule: exactly;">${oficina}</span>
                     </td>
                 </tr>
                 <tr>
-                    <td height="10" style="line-height:10px; font-size:1px;">&nbsp;</td>
+                    <td colspan="2">
+                        <img src="https://www.dulmatesa.es/img/pix.png" width="1" height="10" style="display:block; border:0; margin:0; padding:0; line-height:1px;" alt="">
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -975,38 +966,47 @@
                                 <td width="20" style="vertical-align: middle; padding-right: 7px;">
                                     <img src="https://www.dulmatesa.es/img/telf-dulma.png" alt="Teléfono" width="15" height="15" style="display:block; border:0; max-width:15px; height:auto;">
                                 </td>
-                                <td style="vertical-align: middle;">
-                                    <p style="margin:0; padding:0; font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #828282; font-size: 9pt; text-decoration: none; line-height: 1.2; mso-line-height-rule: exactly;"><span style="color: #828282;">${telefono}</span></p>
+                                <td style="vertical-align: middle; line-height:12px; mso-line-height-rule: exactly;">
+                                    <a href="tel:${telefono}" style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #828282; font-size: 9pt; text-decoration: none; line-height: 12px; mso-line-height-rule: exactly;"><span style="color: #828282; line-height: 12px; mso-line-height-rule: exactly;">${telefono}</span></a>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" height="2" style="font-size:1px; line-height:2px; mso-line-height-rule: exactly;">&nbsp;</td> </tr>
+                                <td colspan="2">
+                                    <img src="https://www.dulmatesa.es/img/pix.png" width="1" height="2" style="display:block; border:0; margin:0; padding:0; line-height:1px;" alt="">
+                                </td>
+                            </tr>
                             <tr>
                                 <td width="20" style="vertical-align: middle; padding-right: 6px;">
                                     <img src="https://www.dulmatesa.es/img/mail-dulma.png" alt="Correo" width="15" height="15" style="display:block; border:0; max-width:15px; height:auto;">
                                 </td>
-                                <td style="vertical-align: middle;">
-                                    <p style="margin:0; padding:0;"><a href="mailto:${correo}" style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #828282; font-size: 9pt; text-decoration: none; line-height: 1.2; mso-line-height-rule: exactly;"><span style="color: #828282;">${correo}</span></a></p>
+                                <td style="vertical-align: middle; line-height:12px; mso-line-height-rule: exactly;">
+                                    <a href="mailto:${correo}" style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #828282; font-size: 9pt; text-decoration: none; line-height: 12px; mso-line-height-rule: exactly;"><span style="color: #828282; line-height: 12px; mso-line-height-rule: exactly;">${correo}</span></a>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" height="2" style="font-size:1px; line-height:2px; mso-line-height-rule: exactly;">&nbsp;</td> </tr>
+                                <td colspan="2">
+                                    <img src="https://www.dulmatesa.es/img/pix.png" width="1" height="2" style="display:block; border:0; margin:0; padding:0; line-height:1px;" alt="">
+                                </td>
+                            </tr>
                             <tr>
                                 <td width="20" style="vertical-align: middle; padding-right: 7px;">
                                     <img src="https://www.dulmatesa.es/img/ubi-dulma.png" alt="Dirección" width="15" height="15" style="display:block; border:0; max-width:15px; height:auto;">
                                 </td>
-                                <td style="vertical-align: middle;">
-                                    <p style="margin:0; padding:0; font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #828282; font-size: 9pt; text-decoration: none; line-height: 1.2; mso-line-height-rule: exactly;">${address}</p>
+                                <td style="vertical-align: middle; line-height:12px; mso-line-height-rule: exactly;">
+                                    <span style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #828282; font-size: 9pt; text-decoration: none; line-height: 12px; mso-line-height-rule: exactly;">${address}</span>
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="2" height="2" style="font-size:1px; line-height:2px; mso-line-height-rule: exactly;">&nbsp;</td> </tr>
+                                <td colspan="2">
+                                    <img src="https://www.dulmatesa.es/img/pix.png" width="1" height="2" style="display:block; border:0; margin:0; padding:0; line-height:1px;" alt="">
+                                </td>
+                            </tr>
                             <tr>
                                 <td width="20" style="vertical-align: middle; padding-right: 5px;">
                                     <img src="https://www.dulmatesa.es/img/nueva-web.png" alt="Web Dulmatesa" width="18" height="18" style="display:block; border:0; max-width:18px; height:auto;">
                                 </td>
-                                <td style="vertical-align: middle;">
-                                    <p style="margin:0; padding:0;"><a href="https://www.dulmatesa.es" style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #0C96D4; font-size: 10pt; font-weight: bold; text-decoration: none; line-height: 1.2; mso-line-height-rule: exactly;"><span style="color: #0C96D4;">Visita nuestra web: www.dulmatesa.es</span></a></p>
+                                <td style="vertical-align: middle; line-height:13px; mso-line-height-rule: exactly;">
+                                    <a href="https://www.dulmatesa.es" style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #0C96D4; font-size: 10pt; font-weight: bold; text-decoration: none; line-height: 13px; mso-line-height-rule: exactly;"><span style="color: #0C96D4; line-height: 13px; mso-line-height-rule: exactly;">Visita nuestra web: www.dulmatesa.es</span></a>
                                 </td>
                             </tr>
                         </table>
