@@ -4,66 +4,11 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dulmatesa - Generador de firmas para correo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap"
+
+      rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-    /* Estilos responsivos */
-        @media screen and (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .form-section,
-    .preview-section {
-        margin: 0;
-        max-width: 100%;
-    }
-
-    .form-section input,
-    .form-section select,
-    .form-section button {
-        width: 100%;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
-
-    input, select {
-        font-size: 14px;
-    }
-
-    .preview-container {
-        width: 100%;
-        padding: 0;
-    }
-}
-
-        @media screen and (max-width: 480px) {
-    h1 {
-        font-size: 24px;
-    }
-
-    .form-section input,
-    .form-section select,
-    .form-section button {
-        font-size: 12px;
-    }
-
-    input, select {
-        padding: 8px;
-    }
-
-    .preview-container {
-        padding: 5px;
-    }
-
-    .copy-button {
-        font-size: 14px;
-    }
-}
-      
+        /* Estilos generales para la aplicación web */
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: #f4f4f4;
@@ -187,13 +132,68 @@
         .preview-container {
             border: 1px solid #ccc;
             border-radius: 5px;
-  
         }
         .extra-info p {
             margin: 10px 0;
             font-size: 11px; /* Tamaño de letra ajustado */
         }
 
+    /* Estilos responsivos para la APLICACIÓN WEB (no para la firma copiada) */
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .form-section,
+            .preview-section {
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .form-section input,
+            .form-section select,
+            .form-section button {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            input, select {
+                font-size: 14px;
+            }
+
+            .preview-container {
+                width: 100%;
+                padding: 0;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+
+            .form-section input,
+            .form-section select,
+            .form-section button {
+                font-size: 12px;
+            }
+
+            input, select {
+                padding: 8px;
+            }
+
+            .preview-container {
+                padding: 5px;
+            }
+
+            .copy-button {
+                font-size: 14px;
+            }
+        }
     </style>
   </head>
   <body>
@@ -343,7 +343,7 @@
               portapapeles. Ahora pégala en Outlook.</strong></div>
         </div>
       </div>
-      <div class="preview-section">
+      <div class="preview-section"> 
         <div class="preview-container">
           <div class="preview" id="signaturePreview"></div>
         </div>
@@ -943,202 +943,115 @@
            address = 'Dirección';
            }
 
-          // Código HTML generado 
+          // Código HTML generado optimizado para email (inline CSS)
           const signatureHTML = `
-    <style>
-        .blue-text {
-            color: #0000ff;
-        }
-
-    /* Estilos responsivos */
-    @media screen and (max-width: 768px) {
-    
-    .container {
-            display: flex;
-            gap: 20px;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
-        }
-
-    body {
-        font-family: 'Montserrat', sans-serif;
-        background-color: #ffffff;
-    }
-    .container {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .form-section,
-    .preview-section {
-        margin: 0;
-        max-width: 100%;
-        border: 0px;
-    }
-
-    .form-section input,
-    .form-section select,
-    .form-section button {
-        width: 100%;
-    }
-
-    h1 {
-        font-size: 28px;
-        line-height: 29px;
-    }
-
-    input, select {
-        font-size: 14px;
-    }
-
-    .preview-container {
-        width: 98%;
-        padding: 0;
-        border: 0px;
-    }
-}
-
-    @media screen and (max-width: 480px) {
-    
-    .container {
-            display: flex;
-            gap: 20px;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
-        }
-
-    body {
-        font-family: 'Montserrat', sans-serif;
-        background-color: #ffffff;
-    }
-
-    h1 {
-        font-size: 25px;
-        line-height: 26px;
-    }
-
-    .form-section input,
-    .form-section select,
-    .form-section button {
-        font-size: 12px;
-    }
-
-    input, select {
-        padding: 8px;
-    }
-
-    .preview-container {
-        width: 98%;
-        padding: 5px;
-    }
-
-    .copy-button {
-        font-size: 14px;
-    }
-}
-    </style>
-
-                <span style="font-family: 'Montserrat', sans-serif;">${saludo}</span>
-                <div style="font-family: 'Montserrat', sans-serif; color: #333; width: 595px;">
-                <table style="font-family: 'Montserrat', sans-serif; width: 570px;" border="0" cellspacing="0" cellpadding="0";>
-                <br>
-                    <tr><td><a href="https://www.dulmatesa.es" target="_blank">
-                    <img width="190px" src="https://www.dulmatesa.es/img/dulmatesa-logo.png" alt="Logo" style="width: 190px; margin-bottom: 20px;">
-                    </a></td></tr>
-
-                    <tr><td style="line-height: 13px;"><strong style="font-family: 'Montserrat', sans-serif; font-size: 11pt; color: #133850;">${name}</strong><br></td></tr>
-                    <tr><td style="line-height: 12px;"><strong style="font-family: 'Montserrat', sans-serif; font-size: 10pt; color: #133850;">${positionValue}</strong><br></td></tr>
-                    <tr><td style="line-height: 20px; font-family: 'Montserrat', sans-serif; font-size: 9pt; color: #133850;">${oficina}</td></tr>
-                    </table>
-
-                    <table cellspacing="0" cellpadding="0" border="0">
-                    <tr><td cellspacing="0" cellpadding="0" border="0" width="570px" height="10px" style="height: 10px; vertical-align: middle;"></td></tr>
-                    </table>
-
-                    
-                    <table cellspacing="0" cellpadding="0" border="0">
-                    <tr><td cellspacing="0" cellpadding="0" border="0" width="0px" style="padding-right: 7px; vertical-align: middle;">
-                        <img src="https://www.dulmatesa.es/img/telf-dulma.png" alt="Teléfono" style="display: block;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" style="min-width:320px; max-width:600px; font-family: 'Montserrat', sans-serif, Arial, Helvetica; font-size:11pt; color:#333333;">
+                <tr>
+                    <td style="padding-bottom: 5px;">
+                        <span style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; font-size: 11pt; color: #333333;">${saludo}</span>
                     </td>
-                    <td width="545px" height="25px" style="font-family: Montserrat, sans-serif; font-size: 9pt; color: #828282; vertical-align: middle;">
-                        <a href="tel:${telefono}" style="font-family: 'Montserrat', sans-serif; color: #828282; font-size: 9pt; text-decoration: none;"><font color="grey">${telefono}</font></a>
-                    </td></tr></table>
-                    
-
-                    <table cellspacing="0" cellpadding="0" border="0">
-                    <tr><td cellspacing="0" cellpadding="0" border="0" width="0px" style="padding-right: 6px; vertical-align: middle;">
-                        <img src="https://www.dulmatesa.es/img/mail-dulma.png" alt="Correo" style="display: block;">
+                </tr>
+                <tr>
+                    <td style="padding-bottom: 20px;">
+                        <a href="https://www.dulmatesa.es" target="_blank" style="display:inline-block;">
+                            <img src="https://www.dulmatesa.es/img/dulmatesa-logo.png" alt="Logo Dulmatesa" border="0" width="190" style="display:block; max-width:190px; height:auto;">
+                        </a>
                     </td>
-                    <td width="545px" height="25px" style="font-family: Montserrat, sans-serif; font-size: 9pt; color: #828282; vertical-align: middle;">
-                    <a href="mailto:${correo}" style="font-family: 'Montserrat', sans-serif; color: #828282; font-size: 9pt; text-decoration: none;"><font color="grey">${correo}</font></a>
-                    </td></tr></table>
-
-
-                    <table cellspacing="0" cellpadding="0" border="0">
-                    <tr><td width="0px" style="padding-right: 7px; vertical-align: middle;">
-                        <img align="absmiddle" src="https://www.dulmatesa.es/img/ubi-dulma.png" alt="Dirección" style="display:block;">
+                </tr>
+                <tr>
+                    <td style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; font-size: 11pt; color: #133850; line-height: 1.2;">
+                        <strong>${name}</strong><br>
+                        <strong style="font-size: 10pt;">${positionValue}</strong><br>
+                        <span style="font-size: 9pt;">${oficina}</span>
                     </td>
-                    <td width="545px" height="25px" style="font-family: Montserrat, sans-serif; font-size: 9pt; color: #828282; vertical-align: middle;">
-                        <span style="font-family: 'Montserrat', sans-serif; color: #828282; font-size: 9pt; text-decoration: none;"><font color="grey">${address}</font></span>
-                    </td></tr></table>
-                    
-
-                    <table cellspacing="0" cellpadding="0" border="0">
-                    <tr><td width="0px" style="padding-right: 5px; vertical-align: middle;">
-                        <img width=18px src="https://www.dulmatesa.es/img/nueva-web.png" alt="Nueva web de Dulmatesa" style="display: block;">
-                    </td>
-                    <td width="544px" height="25px" style="font-family: Montserrat, sans-serif; font-size: 10pt; color: #0C96D4; vertical-align: middle;">
-                        <div class="blue-text"><a href="https://www.dulmatesa.es" style="font-family: 'Montserrat', sans-serif; color: #0C96D4; font-size: 10pt; font-weight: bold; text-decoration: none;"><font color="#0C96D4">Visita nuestra web: www.dulmatesa.es</font></a></div>
-                    </td></tr></table>
-                    
-                    <table width="570px" cellspacing="0" cellpadding="0" border="0">
-                    <tr><td width="570px" height="10px">
-                    <div style="width:570px; height:2px; border-bottom: 2px solid #0C96D4; margin-top:10px; margin-bottom:5px;"></div>
-                    </tr></td></table>
-                    
-                    
-                    <tr><td>
-                    <div style="margin-top: 10px;">
-                        <img src="https://www.dulmatesa.es/img/lopez.png" alt="Productos López" style="width: 100px; margin-right: 10px;">
-                        <img src="https://www.dulmatesa.es/img/productoslopez.png" alt="Productos López" style="width: 100px;">
-                    </div></td></tr>
-                        </table> 
-                    <div style="margin-top: 15px;">
-                        <table style="width: 570px;" border="0">
-                                <tr>
-                                    <td style="width: 20px;"> <img width="20px" src="https://www.dulmatesa.es/img/reciclado.png" alt="Reciclado" style="vertical-align: middle;"></td>
-                                    <td style="width: 550px;"><p style="margin: 10px 0; font-family: 'Montserrat', sans-serif; font-size: 8pt; color: #878787;">Cuidemos el medio ambiente. Por favor no imprima este e-mail si no es necesario.</p></td>
-                                </tr> 
+                </tr>
+                <tr>
+                    <td height="10" style="line-height:10px; font-size:1px;">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <table cellpadding="0" cellspacing="0" border="0" style="width:100%; font-family: 'Montserrat', sans-serif, Arial, Helvetica; font-size: 9pt; color: #828282;">
+                            <tr>
+                                <td width="20" style="vertical-align: middle; padding-right: 7px;">
+                                    <img src="https://www.dulmatesa.es/img/telf-dulma.png" alt="Teléfono" width="15" height="15" style="display:block; border:0; max-width:15px; height:auto;">
+                                </td>
+                                <td style="vertical-align: middle; padding-top:2px; padding-bottom:2px;">
+                                    <a href="tel:${telefono}" style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #828282; font-size: 9pt; text-decoration: none;"><span style="color: #828282;">${telefono}</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20" style="vertical-align: middle; padding-right: 6px;">
+                                    <img src="https://www.dulmatesa.es/img/mail-dulma.png" alt="Correo" width="15" height="15" style="display:block; border:0; max-width:15px; height:auto;">
+                                </td>
+                                <td style="vertical-align: middle; padding-top:2px; padding-bottom:2px;">
+                                    <a href="mailto:${correo}" style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #828282; font-size: 9pt; text-decoration: none;"><span style="color: #828282;">${correo}</span></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20" style="vertical-align: middle; padding-right: 7px;">
+                                    <img src="https://www.dulmatesa.es/img/ubi-dulma.png" alt="Dirección" width="15" height="15" style="display:block; border:0; max-width:15px; height:auto;">
+                                </td>
+                                <td style="vertical-align: middle; padding-top:2px; padding-bottom:2px;">
+                                    <span style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #828282; font-size: 9pt; text-decoration: none;">${address}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="20" style="vertical-align: middle; padding-right: 5px;">
+                                    <img src="https://www.dulmatesa.es/img/nueva-web.png" alt="Web Dulmatesa" width="18" height="18" style="display:block; border:0; max-width:18px; height:auto;">
+                                </td>
+                                <td style="vertical-align: middle; padding-top:2px; padding-bottom:2px;">
+                                    <a href="https://www.dulmatesa.es" style="font-family: 'Montserrat', sans-serif, Arial, Helvetica; color: #0C96D4; font-size: 10pt; font-weight: bold; text-decoration: none;"><span style="color: #0C96D4;">Visita nuestra web: www.dulmatesa.es</span></a>
+                                </td>
+                            </tr>
                         </table>
-                        <table style="width: 570px;" border="0">
-                                <tr>
-                                    <td style="width: 570px;"><p style="margin: 10px 0; font-family: 'Montserrat', sans-serif; font-size: 8pt; color: #878787;">AVISO LEGAL: En virtud de la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales y del reglamento europeo RGPD 679/2016 le informamos que sus datos están siendo objeto de tratamiento por parte de DULMATESA, S.L. Le informamos que los Datos de Carácter Personal que recoge son objeto de tratamiento, aplicándose los protocolos que la RGPD y la AGENCIA ESPAÑOLA DE PROTECCIÓN DE DATOS obliga. Para ejercitar sus derechos puede dirigirse a DULMATESA, S.L. en el domicilio social de calle Jaén, 9, Edificio Galia, Planta 3, Oficina 14, en el 29004 de Málaga o en el email: <a href="mailto:lopd@dulmatesa.es" style="color: #0C96D4; font-size: 8pt; font-weight: normal;"><font color="#0c96d4">lopd@dulmatesa.es</font></a> con el fin de ejercer sus derechos de acceso, rectificación, supresión (derecho al olvido), limitación de tratamiento, portabilidad de los datos, oposición, y a no ser objeto de decisiones automatizadas, indicando como Asunto: “Derechos Ley Protección de Datos”, y adjuntando fotocopia de su DNI. La información contenida en este correo electrónico, y en su caso en los documentos adjuntos, es información privilegiada para uso exclusivo de la persona y/o personas a las que va dirigido. No está permitido el acceso a este mensaje a cualquier otra persona distinta a los indicados. Si Usted no es uno de los destinatarios, cualquier duplicación, reproducción, distribución, así como cualquier uso de la información contenida en él o cualquiera otra acción u omisión tomada en relación con el mismo, puede estar prohibido y ser ilegal. En dicho caso, por favor notifíquelo al remitente y proceda a la eliminación de este correo electrónico, así como de sus adjuntos si los hubiere.</p></td>
-                                </tr>
-                        </table>                       
-                    </div>
-                </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top:10px; padding-bottom:5px;">
+                        <div style="width:100%; height:2px; border-bottom: 2px solid #0C96D4;"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top:10px; padding-bottom:15px;">
+                        <img src="https://www.dulmatesa.es/img/lopez.png" alt="Productos López" width="100" style="display:inline-block; vertical-align:middle; margin-right: 10px; max-width:100px; height:auto;">
+                        <img src="https://www.dulmatesa.es/img/productoslopez.png" alt="Productos López" width="100" style="display:inline-block; vertical-align:middle; max-width:100px; height:auto;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                            <tr>
+                                <td width="20" style="vertical-align: top; padding-right: 5px;">
+                                    <img width="20" src="https://www.dulmatesa.es/img/reciclado.png" alt="Reciclado" style="display:block; border:0; max-width:20px; height:auto; vertical-align: top;">
+                                </td>
+                                <td style="vertical-align: top;">
+                                    <p style="margin: 0; font-family: 'Montserrat', sans-serif, Arial, Helvetica; font-size: 8pt; color: #878787;">Cuidemos el medio ambiente. Por favor no imprima este e-mail si no es necesario.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="padding-top:10px;">
+                                    <p style="margin: 0; font-family: 'Montserrat', sans-serif, Arial, Helvetica; font-size: 8pt; color: #878787;">AVISO LEGAL: En virtud de la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales y del reglamento europeo RGPD 679/2016 le informamos que sus datos están siendo objeto de tratamiento por parte de DULMATESA, S.L. Le informamos que los Datos de Carácter Personal que recoge son objeto de tratamiento, aplicándose los protocolos que la RGPD y la AGENCIA ESPAÑOLA DE PROTECCIÓN DE DATOS obliga. Para ejercitar sus derechos puede dirigirse a DULMATESA, S.L. en el domicilio social de calle Jaén, 9, Edificio Galia, Planta 3, Oficina 14, en el 29004 de Málaga o en el email: <a href="mailto:lopd@dulmatesa.es" style="color: #0C96D4; font-size: 8pt; font-weight: normal; text-decoration: none;"><span style="color: #0c96d4;">lopd@dulmatesa.es</span></a> con el fin de ejercer sus derechos de acceso, rectificación, supresión (derecho al olvido), limitación de tratamiento, portabilidad de los datos, oposición, y a no ser objeto de decisiones automatizadas, indicando como Asunto: “Derechos Ley Protección de Datos”, y adjuntando fotocopia de su DNI. La información contenida en este correo electrónico, y en su caso en los documentos adjuntos, es información privilegiada para uso exclusivo de la persona y/o personas a las que va dirigido. No está permitido el acceso a este mensaje a cualquier otra persona distinta a los indicados. Si Usted no es uno de los destinatarios, cualquier duplicación, reproducción, distribución, así como cualquier uso de la información contenida en él o cualquiera otra acción u omisión tomada en relación con el mismo, puede estar prohibido y ser ilegal. En dicho caso, por favor notifíquelo al remitente y proceda a la eliminación de este correo electrónico, así como de sus adjuntos si los hubiere.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
             `;
 
             document.getElementById('signaturePreview').innerHTML = signatureHTML;
             document.getElementById('signatureOutput').innerText = signatureHTML.trim();
 
-            // Habilitar el botón de copiar al portapapeles solo si todos los campos están llenos y válidos
-            const allFieldsFilled = Array.from(document.querySelectorAll('#name'))
-                .every(field => field.value.trim() !== '');
-            if (allFieldsFilled) {
+            // Habilitar el botón de copiar al portapapeles solo si el nombre está seleccionado
+            const nameSelected = document.getElementById('name').value.trim() !== '';
+            if (nameSelected) {
                 copyButton.classList.add('enabled');
                 copyButton.disabled = false;
-                signatureOutput.classList.add('selectable'); // Habilitar selección de texto
+                signatureOutput.classList.add('selectable');
             } else {
                 copyButton.classList.remove('enabled');
                 copyButton.disabled = true;
-                signatureOutput.classList.remove('selectable'); // Deshabilitar selección de texto
+                signatureOutput.classList.remove('selectable');
             }
         }
       
@@ -1171,7 +1084,7 @@
         }
 
         // Actualizar la vista previa en tiempo real
-        document.querySelectorAll('#name, #position, #office, #phone, #email').forEach(element => {
+        document.querySelectorAll('#name, #position, #office, #phone, #email, #saludo').forEach(element => { // Agregado #saludo
             element.addEventListener('input', updateSignature);
         });
 
