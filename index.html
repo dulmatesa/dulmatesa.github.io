@@ -3,8 +3,10 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dulmatesa - Generador de firmas para correo v2</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Dulmatesa - Generador de firmas para correo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap"
+
+      rel="stylesheet">
     <style>
         /* Estilos generales para la aplicación web */
         body {
@@ -197,7 +199,7 @@
   <body>
     <div class="container">
       <div class="form-section">
-        <h1>Generador de firmas v2<br>
+        <h1>Generador de firmas v3<br>
           Correo Dulmatesa</h1>
         Bienvenid@ al generador de firmas para correo de Dulmatesa. Para generar
         tu firma, selecciona tu nombre y pulsa el botón verde "Copiar firma al
@@ -306,7 +308,9 @@
             <option value="Zaira Burgos">Zaira Burgos</option>
           </select>
           <label for="position" style="display: none;">Cargo:</label> <input id="position"
+
             placeholder="Tu cargo" required="" oninput="updateSignature()" style="display: none;"
+
             type="text"> <label for="office" style="display: none;">Sede:</label>
           <select style="display: none;" id="office" required="" onchange="updateSignature()">
             <option style="display: none;" value="" disabled="disabled" selected="selected">Selecciona
@@ -316,23 +320,30 @@
             <option value="Oficinas Centrales / HQ">Oficinas Centrales / HQ</option>
           </select>
           <label for="phone" style="display: none;">Teléfono:</label> <input id="phone"
+
             placeholder="Tu teléfono" required="" oninput="updateSignature()" style="display: none;"
+
             type="number"> <label for="email" style="display: none;">Correo
             electrónico:</label> <input id="email" placeholder="Tu correo electrónico"
+
             required="" oninput="updateSignature()" style="display: none;" type="email"><span
+
             id="emailError"></span> <label style="color:#133850" for="saludo"><br>
             Saludo encima de la firma (opcional)</label> <input id="saludo" placeholder="Tu saludo. Si no quieres incluir uno, déjalo vacío."
+
             required="" oninput="updateSignature()" style="width: 96%;" type="text"><span
+
             id="emailError"></span> </form>
         <div class="output">
           <div class="signature" id="signatureOutput" style="visibility:hidden"></div>
           <button class="copy-button" id="copyButton" onclick="copyToClipboard()"
+
             disabled="disabled">Copiar firma al portapapeles</button>
           <div class="message" id="copyMessage"><strong>Firma copiada al
               portapapeles. Ahora pégala en Outlook.</strong></div>
         </div>
       </div>
-      <div class="preview-section">
+      <div class="preview-section"> 
         <div class="preview-container">
           <div class="preview" id="signaturePreview"></div>
         </div>
@@ -661,7 +672,6 @@
                 case 'José Carlos Rodríguez':               
                     positionValue = 'Responsable Tesorería';
                     oficina = 'Oficinas Centrales / HQ';
-                    correo = 'josecarlos.rodriguez@dulmatesa.es';
                     telefono = '679302109';
                     break;
                 case 'José Luis Millán':               
@@ -956,7 +966,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <img src="https://www.dulmatesa.es/img/pix.png" width="1" height="10" style="display:block; border:0; margin:0; padding:0; line-height:1px;" alt="">
+                        <img src="https://www.dulmatesa.es/img/spacer-dulmatesa.png" width="1" height="10" style="display:block; border:0; margin:0; padding:0; line-height:1px;" alt="">
                     </td>
                 </tr>
                 <tr>
@@ -972,7 +982,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <img src="https://www.dulmatesa.es/img/pix.png" width="1" height="2" style="display:block; border:0; margin:0; padding:0; line-height:1px;" alt="">
+                                    <img src="https://www.dulmatesa.es/img/spacer-dulmatesa.png" width="1" height="2" style="display:block; border:0; margin:0; padding:0; line-height:1px;" alt="">
                                 </td>
                             </tr>
                             <tr>
@@ -985,7 +995,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <img src="https://www.dulmatesa.es/img/pix.png" width="1" height="2" style="display:block; border:0; margin:0; padding:0; line-height:1px;" alt="">
+                                    <img src="https://www.dulmatesa.es/img/spacer-dulmatesa.png" width="1" height="2" style="display:block; border:0; margin:0; padding:0; line-height:1px;" alt="">
                                 </td>
                             </tr>
                             <tr>
@@ -998,7 +1008,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <img src="https://www.dulmatesa.es/img/pix.png" width="1" height="2" style="display:block; border:0; margin:0; padding:0; line-height:1px;" alt="">
+                                    <img src="https://www.dulmatesa.es/img/spacer-dulmatesa.png" width="1" height="2" style="display:block; border:0; margin:0; padding:0; line-height:1px;" alt="">
                                 </td>
                             </tr>
                             <tr>
