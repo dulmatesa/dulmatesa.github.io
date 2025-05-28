@@ -174,11 +174,8 @@
             .preview-container {
                 width: 100%;
                 padding: 0;
-                /* Add overflow for mobile preview if content is too wide */
                 overflow-x: auto; /* Permite scroll horizontal si el contenido es más ancho */
             }
-
-            /* Styles to make content inside preview-container responsive for display ONLY */
             .preview-container table {
                 width: 100% !important; /* Tablas intentan ocupar todo el ancho */
                 box-sizing: border-box;
@@ -209,12 +206,11 @@
             .preview-container {
                 padding: 5px;
             }
-            /* Re-apply overflow-x for smaller screens too */
+            
             .preview-container {
                 overflow-x: auto;
             }
 
-            /* Re-apply styles for content inside preview-container for smaller screens */
             .preview-container table {
                 width: 100% !important;
                 box-sizing: border-box;
@@ -357,7 +353,7 @@
               Ahora pégala en Outlook</strong></div>
         </div>
       </div>
-      <div class="preview-section">
+      <div class="preview-section"> 
         <div class="preview-container">
           <div class="preview" id="signaturePreview"></div>
         </div>
@@ -417,7 +413,7 @@
                 'Aina Orsi': { position: 'Responsable PRL & MA', office: 'Sede Navarrés', phone: '659855737', email: 'aina.orsi@dulmatesa.es' },
                 'Alberto López': { position: 'Presidente', office: 'Oficinas Centrales / HQ', phone: '653784293', email: 'dulmatesa@dulmatesa.es' },
                 'Alejandro Silva': { position: 'Responsable de Departamento IT', office: 'Oficinas Centrales / HQ', phone: '636514538', email: 'alejandro.silva@dulmatesa.es' },
-                'Alfredo González': { position: 'Director Financiero', office: 'Oficinas Centrales / HQ', phone: '606950021', email: 'alfredo.gonzalez@dulmatesa.es' },
+                'Alfredo González': { position: 'Director General Finanzas y Administración', office: 'Oficinas Centrales / HQ', phone: '606950021', email: 'alfredo.gonzalez@dulmatesa.es' },
                 'Álvaro García': { position: 'Técnico Calidad Central', office: 'Oficinas Centrales / HQ', phone: '682485597', email: 'alvaro.garcia@dulmatesa.es' },
                 'Ana Cáceres': { position: 'Encargada Producción', office: 'Sede Navarrés', phone: '628301417', email: 'ana.caceres@dulmatesa.es' },
                 'Ana Gutiérrez': { position: 'Responsable Calidad', office: 'Sede Puente Genil', phone: '620751997', email: 'ana.gutierrez@dulmatesa.es' },
@@ -700,6 +696,5 @@
         // La función updateSignature ya se llama en DOMContentLoaded para la carga inicial.
         // Se asegura que la firma se muestre correctamente al cargar la página.
     </script>
-    
   </body>
 </html>
