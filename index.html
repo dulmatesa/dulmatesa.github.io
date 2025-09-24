@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Dulmatesa - Generador de firmas para correo</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&amp;display=swap"
 
@@ -113,9 +113,9 @@
         .message {
             /* Eliminamos el margin-top de aquí y lo controlamos con JS */
             display: none;
-            font-size: 17px;
+            font-size: 18px;
             margin-bottom: 11px;
-            padding: 10px;
+            padding: 13px;
             border: 1px solid #28a745;
             background-color: #d4edda;
             color: #155724;
@@ -232,7 +232,7 @@
     <div class="container">
       <div class="form-section">
         <h1>Generador de firmas<br>
-          Correo Dulmatesa</h1>
+          Correo Dulmatesa v.2.1</h1>
         Bienvenid@ al generador de firmas para correo de Dulmatesa. Selecciona
         tu nombre y pulsa el botón verde "Copiar firma al portapapeles".<br>
         <br>
@@ -244,8 +244,8 @@
         tu firma. <br>
         <strong style="color:#133850"></strong><br>
         <form id="signatureForm"> <label for="name" style="color:#133850">Nombre:</label>
-          <select id="name" required="" onchange="updateSignature()">
-            <option value="" disabled="disabled" selected="selected">Selecciona
+          <select id="name" onchange="updateSignature()" required="">
+            <option disabled="disabled" selected="selected" value="">Selecciona
               tu nombre</option>
             <option value="Abel Alonso">Abel Alonso</option>
             <option value="Aina Orsi">Aina Orsi</option>
@@ -282,7 +282,6 @@
             <option value="Francisco Sánchez">Francisco Sánchez</option>
             <option value="Inmaculada Palazón">Inmaculada Palazón</option>
             <option value="Isabel Valle">Isabel Valle</option>
-            <option value="Iván Camacho">Iván Camacho</option>
             <option value="Javier Jaime">Javier Jaime</option>
             <option value="Javier López">Javier López</option>
             <option value="Javier Serrano">Javier Serrano</option>
@@ -308,6 +307,7 @@
             <option value="María Ángeles Tirado">María Ángeles Tirado</option>
             <option value="María Castilla">María Castilla</option>
             <option value="María Matas">María Matas</option>
+            <option value="Marina Cano">Marina Cano</option>
             <option value="Marina Ligero">Marina Ligero</option>
             <option value="Mario López">Mario López</option>
             <option value="Marta Requena">Marta Requena</option>
@@ -317,8 +317,6 @@
             <option value="Muna Driss">Muna Driss</option>
             <option value="Óscar Tirado">Óscar Tirado</option>
             <option value="Pablo Alonso">Pablo Alonso</option>
-            <option value="Pablo Gross">Pablo Gross</option>
-            <option value="Paola Castillo">Paola Castillo</option>
             <option value="Patricia Pérez">Patricia Pérez</option>
             <option value="Proyecto Muñoz">Proyecto Muñoz</option>
             <option value="Rafael Rey">Rafael Rey</option>
@@ -327,6 +325,7 @@
             <option value="Raúl Castejón">Raúl Castejón</option>
             <option value="Rocío Borrego">Rocío Borrego</option>
             <option value="Rubén Torres">Rubén Torres</option>
+            <option value="Saúl Gavilán">Saúl Gavilán</option>
             <option value="Sergio Esparza">Sergio Esparza</option>
             <option value="Sergio Simón">Sergio Simón</option>
             <option value="Sergio Soriano">Sergio Soriano</option>
@@ -336,24 +335,23 @@
             <option value="Zaira Burgos">Zaira Burgos</option>
           </select>
           <label for="saludo" style="color:#133850"><br>
-            Saludo encima de la firma (opcional)</label> <input id="saludo" placeholder="Tu saludo. Si no quieres incluir uno, déjalo vacío."
+            Saludo encima de la firma (opcional)</label> <input id="saludo" oninput="updateSignature()"
 
-            required="" oninput="updateSignature()" style="width: 96%;" type="text"><span
+            placeholder="Tu saludo. Si no quieres incluir uno, déjalo vacío." required=""
 
-            id="emailError"></span> </form>
+            style="width: 96%;" type="text"><span id="emailError"></span> </form>
         <div class="output">
           <div class="signature" id="signatureOutput" style="visibility:hidden"></div>
-          <button class="copy-button" id="copyButton" onclick="copyToClipboard()"
-
-            disabled="disabled">Copiar firma al portapapeles</button>
-          <div style="display:none" class="espaciado" id="espaciado"><br>
+          <button class="copy-button" disabled="disabled" id="copyButton" onclick="copyToClipboard()">Copiar
+            firma al portapapeles</button>
+          <div class="espaciado" id="espaciado" style="display:none"><br>
           </div>
           <div class="message" id="copyMessage"><strong>Firma copiada al
               portapapeles<br>
               Ahora pégala en Outlook</strong></div>
         </div>
       </div>
-      <div class="preview-section"> 
+      <div class="preview-section">
         <div class="preview-container">
           <div class="preview" id="signaturePreview"></div>
         </div>
@@ -428,13 +426,13 @@
                 'Carlos López': { position: 'Director General Calidad y Seguridad Alimentaria', office: 'Oficinas Centrales / HQ', phone: '639611176', email: 'carlos.lopez@dulmatesa.es' },
                 'Carlos Sarrión': { position: 'Encargado Producción', office: 'Sede Navarrés', phone: '635642344', email: 'carlos.sarrion@dulmatesa.es' },
                 'Carmen Sanchís': { position: 'Responsable Compras y Packaging', office: 'Sede Navarrés', phone: '659845655', email: 'carmen.sanchis@dulmatesa.es' },
-                'Claudia Moral': { position: 'Key Account Manager', office: 'Oficinas Centrales / HQ', phone: '686627533', email: 'claudia.moral@dulmatesa.es' },
+                'Claudia Moral': { position: 'Key Account Manager', office: 'Oficinas Centrales / HQ', phone: '+34 686627533', email: 'claudia.moral@dulmatesa.es' },
                 'Consuelo Martínez': { position: 'Encargada Producción', office: 'Sede Navarrés', phone: '635642344', email: 'consuelo.martinez@dulmatesa.es' },
                 'Cristian Ortiz': { position: 'Administrativo Facturación', office: 'Oficinas Centrales / HQ', phone: '699695169', email: 'cristian.ortiz@dulmatesa.es' },
                 'Daniel San Martín': { position: 'Técnico Calidad', office: 'Sede Navarrés', phone: '690923823', email: 'dani.sanmartin@dulmatesa.es' },
-                'Diego Granero': { position: 'Técnico Calidad', office: 'Sede Navarrés', phone: '690923823', email: 'diego.granero@dulmatesa.es' },
+                'Diego Granero': { position: 'Administrativo Cadena de Suministro', office: 'Sede Navarrés', phone: '690923823', email: 'diego.granero@dulmatesa.es' },
                 'Domingo Fernández': { position: 'Responsable Cadena de Suministro', office: 'Sede Puente Genil', phone: '683394997', email: 'domingo.fernandez@dulmatesa.es' },
-                'Eduardo Alarcón': { position: 'Técnico Mantenimiento', office: 'Sede Navarrés', phone: '689807132', email: 'eduardo.alarcon@dulmatesa.es' },
+                'Eduardo Alarcón': { position: 'Responsable Mantenimiento', office: 'Sede Navarrés', phone: '689807132', email: 'eduardo.alarcon@dulmatesa.es' },
                 'Esteban Tirado': { position: 'Jefe Cadena de Suministro Central', office: 'Oficinas Centrales / HQ', phone: '658877528', email: 'esteban.tirado@dulmatesa.es' },
                 'Fátima Gómez': { position: 'Encargada Producción', office: 'Sede Puente Genil', phone: '618863669', email: 'fatima.gomez@dulmatesa.es' },
                 'Faustino Villanueva': { position: 'Administrativo Mantenimiento', office: 'Sede Navarrés', phone: '630829208', email: 'faustino.villanueva@dulmatesa.es' },
@@ -444,7 +442,6 @@
                 'Francisco Sánchez': { position: 'Responsable Mantenimiento', office: 'Sede Puente Genil', phone: '620337760', email: 'francisco.sanchez@dulmatesa.es' },
                 'Inmaculada Palazón': { position: 'Administrativa Cadena de Suministro', office: 'Sede Navarrés', phone: '962266191', email: 'inmaculada.palazon@dulmatesa.es' },
                 'Isabel Valle': { position: 'Aprovisionadora Compras y Packaging', office: 'Sede Puente Genil', phone: '650349402', email: 'isabel.valle@dulmatesa.es' },
-                'Iván Camacho': { position: 'Encargado Producción', office: 'Sede Puente Genil', phone: '962266191', email: 'ivan.camacho@dulmatesa.es' },
                 'Javier Jaime': { position: 'Controller', office: 'Oficinas Centrales / HQ', phone: '608656626', email: 'javier.jaime@dulmatesa.es' },
                 'Javier López': { position: 'Jefe PRL & MA Central', office: 'Oficinas Centrales / HQ', phone: '686966353', email: 'javier.lopez@dulmatesa.es' },
                 'Javier Serrano': { position: 'Técnico de Calidad', office: 'Sede Puente Genil', phone: '620751997', email: 'javier.serrano@dulmatesa.es' },
@@ -463,38 +460,38 @@
                 'Juan Manuel Lluch': { position: 'Encargado Producción', office: 'Sede Navarrés', phone: '962266191', email: 'juanmanuel.lluch@dulmatesa.es' },
                 'Juan Miguel Cabello': { position: 'Encargado Producción', office: 'Sede Navarrés', phone: '618863669', email: 'juanmiguel.cabello@dulmatesa.es' },
                 'Julen Yanguas': { position: 'Jefe de Planta', office: 'Sede Puente Genil', phone: '628368102', email: 'julen.yanguas@dulmatesa.es' },
-                'Kenya Rincón': { position: 'Administrativa Comercial y Logística', office: 'Oficinas Centrales / HQ', phone: '638651907', email: 'kenya.rincon@dulmatesa.es' },
+                'Kenya Rincón': { position: 'Administrativa Comercial y Logística', office: 'Oficinas Centrales / HQ', phone: '+34 638651907', email: 'kenya.rincon@dulmatesa.es' },
                 'Laura Martínez': { position: 'Responsable RRHH', office: 'Sede Puente Genil', phone: '683180977', email: 'laura.martinez@dulmatesa.es' },
                 'Lissette Zúñiga': { position: 'Técnica Calidad', office: 'Sede Navarrés', phone: '962266191', email: 'lissette.zuniga@dulmatesa.es' },
                 'Lydia Sanz': { position: 'Responsable Contabilidad', office: 'Oficinas Centrales / HQ', phone: '699302573', email: 'lydia.sanz@dulmatesa.es' },
                 'María Ángeles Tirado': { position: 'Técnica Calidad', office: 'Sede Navarrés', phone: '630828399', email: 'mariaangeles.tirado@dulmatesa.es' },
                 'María Castilla': { position: 'Técnica Calidad', office: 'Sede Puente Genil', phone: '957601536', email: 'maria.castilla@dulmatesa.es' },
                 'María Matas': { position: 'Técnica Calidad', office: 'Sede Puente Genil', phone: '957601536', email: 'maria.matas@dulmatesa.es' },
+                'Marina Cano': { position: 'Técnica de Calidad', office: 'Sede Puente Genil', phone: '652914552', email: 'marina.cano@dulmatesa.es' },
                 'Marina Ligero': { position: 'Técnica Calidad Central', office: 'Oficinas Centrales / HQ', phone: '609084797', email: 'marina.ligero@dulmatesa.es' },
                 'Mario López': { position: 'Jefe de Obra', office: 'Sede Puente Genil', phone: '683120239', email: 'mario.lopez@dulmatesa.es' },
                 'Marta Requena': { position: 'Responsable Calidad', office: 'Sede Navarrés', phone: '648916611', email: 'marta.requena@dulmatesa.es' },
                 'Micaela Santacatalina': { position: 'Técnica RRHH', office: 'Sede Navarrés', phone: '699748590', email: 'micaela.santacatalina@dulmatesa.es' },
                 'Miguel Fabra': { position: 'Encargado Mantenimiento', office: 'Sede Navarrés', phone: '630574118', email: 'miguel.fabra@dulmatesa.es' },
-                'Miriam Hernández': { position: 'Tecnóloga Calidad', office: 'Sede Puente Genil', phone: '638402663', email: 'miriam.hernandez@dulmatesa.es' },
+                'Miriam Hernández': { position: 'Tecnóloga', office: 'Sede Puente Genil', phone: '638402663', email: 'miriam.hernandez@dulmatesa.es' },
                 'Muna Driss': { position: 'Responsable Administración', office: 'Oficinas Centrales / HQ', phone: '622326988', email: 'muna.driss@dulmatesa.es' },
                 'Óscar Tirado': { position: 'Encargado Producción', office: 'Sede Navarrés', phone: '635642344', email: 'oscar.tirado@dulmatesa.es' },
-                'Pablo Alonso': { position: 'Director RRHH & PRL', office: 'Oficinas Centrales / HQ', phone: '660970356', email: 'pablo.alonso@dulmatesa.es' },
-                'Pablo Gross': { position: 'Auxiliar Administrativo Comercial y Logística', office: 'Oficinas Centrales / HQ', phone: '952105709', email: 'pablo.gross@dulmatesa.es' },
-                'Paola Castillo': { position: 'Administrativa Contabilidad', office: 'Oficinas Centrales / HQ', phone: '952105709', email: 'paola.castillo@dulmatesa.es' },
+                'Pablo Alonso': { position: 'Director RRHH & PRL', office: 'Oficinas Centrales / HQ', phone: '660970356', email: 'pablo.alonso@dulmatesa.es' },    
                 'Patricia Pérez': { position: 'Encargada Producción', office: 'Sede Navarrés', phone: '635642344', email: 'patricia.perez@dulmatesa.es' },
                 'Proyecto Muñoz': { position: 'Técnico RRHH', office: 'Sede Navarrés', phone: '699258454', email: 'proyecto.munoz@dulmatesa.es' },
                 'Rafael Rey': { position: 'Técnico Mantenimiento', office: 'Sede Navarrés', phone: '608633205', email: 'rafael.rey@dulmatesa.es' },
-                'Rafael Román': { position: 'Director Operaciones', office: 'Oficinas Centrales / HQ', phone: '660970356', email: 'rafa.roman@dulmatesa.es' },
+                'Rafael Román': { position: 'Director Operaciones', office: 'Oficinas Centrales / HQ', phone: '660824353', email: 'rafael.roman@dulmatesa.es' },
                 'Raquel García': { position: 'Técnica Calidad', office: 'Sede Navarrés', phone: '630828399', email: 'raquel.garcia@dulmatesa.es' },
                 'Raúl Castejón': { position: 'Controller', office: 'Oficinas Centrales / HQ', phone: '699089050', email: 'raul.castejon@dulmatesa.es' },
                 'Rocío Borrego': { position: 'Técnica Gestión Documental Calidad', office: 'Sede Puente Genil', phone: '957601536', email: 'rocio.borrego@dulmatesa.es' },
                 'Rubén Torres': { position: 'Encargado Producción', office: 'Sede Puente Genil', phone: '619863669', email: 'ruben.torres@dulmatesa.es' },
+                'Saúl Gavilán': { position: 'Aprovisionador Compras y Packaging', office: 'Sede Puente Genil', phone: '650349402', email: 'saul.gavilan@dulmatesa.es' },
                 'Sergio Esparza': { position: 'Administrativo Recepción', office: 'Sede Navarrés', phone: '962266191', email: 'sergio.esparza@dulmatesa.es' },
                 'Sergio Simón': { position: 'Técnico Gestión Documental Calidad', office: 'Sede Navarrés', phone: '608789918', email: 'sergio.simon@dulmatesa.es' },
                 'Sergio Soriano': { position: 'Técnico Cadena de Suministro', office: 'Sede Navarrés', phone: '962266191', email: 'sergio.soriano@dulmatesa.es' },
                 'Susana Jiménez': { position: 'Administrativa Cadena de Suministro', office: 'Sede Puente Genil', phone: '620193449', email: 'susana.jimenez@dulmatesa.es' },
                 'Toni Ramírez': { position: 'Tecnólogo Calidad', office: 'Sede Navarrés', phone: '606307755', email: 'toni.ramirez@dulmatesa.es' },
-                'Verónica Argente': { position: 'Administrativa Recepción', office: 'Sede Navarrés', phone: '606307755', email: 'veronica.argente@dulmatesa.es' },
+                'Verónica Argente': { position: 'Administrativa Recepción', office: 'Sede Navarrés', phone: '648566278', email: 'veronica.argente@dulmatesa.es' },
                 'Zaira Burgos': { position: 'Administrativa Facturación', office: 'Oficinas Centrales / HQ', phone: '952105709', email: 'zaira.burgos@dulmatesa.es' }
             };
 
@@ -527,8 +524,8 @@
             }
 
             // Define los enlaces con o sin href según el dispositivo
-            let phoneLink = `<a href="tel:${telefono}" style="color: #828282; text-decoration: none; font-size: 9pt;"><span style="color: #828282; line-height: 16pt;">${telefono}</span></a>`;
-            let emailLink = `<a href="mailto:${correo}" style="color: #828282; text-decoration: none; font-size: 9pt;"><span style="color: #828282; line-height: 16pt;">${correo}</span></a>`;
+            let phoneLink = `<a href="tel:${telefono}" style="color: #828282; text-decoration: none; font-size: 9pt;"><span style="color: #828282; line-height: 16pt;">${telefono}</span></span>`;
+            let emailLink = `<a href="mailto:${correo}" style="color: #828282; text-decoration: none; font-size: 9pt;"><span style="color: #828282; line-height: 16pt;">${correo}</span></span>`;
             // Espaciador por defecto para escritorio
             let legalSpacerHtml = `<td colspan="2" height="10" style="font-size:0; line-height:0; height:20px; overflow:hidden;">&nbsp;</td>`;
 
@@ -538,13 +535,18 @@
                 phoneLink = `<span style="color: #828282; text-decoration: none; font-size: 9pt; line-height: 16pt;">${telefono}</span>`;
                 emailLink = `<span style="color: #828282; text-decoration: none; font-size: 9pt; line-height: 16pt;">${correo}</span>`;
                 // Para móvil, un espaciador de 3px
-                legalSpacerHtml = `<td colspan="2" height="3" style="font-size:0; line-height:0; height:0px; overflow:hidden;">&nbsp;</td>`;
+                legalSpacerHtml = `<td colspan="2" height="10" style="font-size:0; line-height:0; height:10px; overflow:hidden;"> </td>`;
+
             }
 
 
             // Código HTML generado optimizado para email (inline CSS)
             const signatureHTML = `
-                <div style="min-width:320px; max-width:600px; font-family: 'Montserrat', sans-serif, Arial, Helvetica; mso-line-height-rule: exactly; margin:0 auto;">
+  <table cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse:collapse;">
+    <tr>
+      <td>
+        
+                <div style="min-width:320px; max-width:600px; font-family: 'Montserrat', sans-serif, Arial, Helvetica; mso-line-height-rule: exactly;">
                     ${saludo ? `<p style="margin:0; padding:0; font-size: 11pt; line-height: 14pt;">${saludo}</p><br>` : ''}
 
                     <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width:100%;">
@@ -632,10 +634,25 @@
                             <td colspan="2" style="font-size:0; line-height:0;">
                                 <p style="margin: 0; padding: 0; font-family: 'Montserrat', sans-serif, Arial, Helvetica; font-size: 8pt; color: #878787; line-height: 11pt;">AVISO LEGAL: En virtud de la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales y del reglamento europeo RGPD 679/2016 le informamos que sus datos están siendo objeto de tratamiento por parte de DULMATESA, S.L. Le informamos que los Datos de Carácter Personal que recoge son objeto de tratamiento, aplicándose los protocolos que la RGPD y la AGENCIA ESPAÑOLA DE PROTECCIÓN DE DATOS obliga. Para ejercitar sus derechos puede dirigirse a DULMATESA, S.L. en el domicilio social de calle Jaén, 9, Edificio Galia, Planta 3, Oficina 14, en el 29004 de Málaga o en el email: <a href="mailto:lopd@dulmatesa.es" style="color: #0C96D4; font-size: 8pt; font-weight: normal; text-decoration: none;"><span style="color: #0C96D4; line-height: 11pt;">lopd@dulmatesa.es</span></a> con el fin de ejercer sus derechos de acceso, rectificación, supresión (derecho al olvido), limitación de tratamiento, portabilidad de los datos, oposición, y a no ser objeto de decisiones automatizadas, indicando como Asunto: “Derechos Ley Protección de Datos”, y adjuntando fotocopia de su DNI. La información contenida en este correo electrónico, y en su caso en los documentos adjuntos, es información privilegiada para uso exclusivo de la persona y/o personas a las que va dirigido. No está permitido el acceso a este mensaje a cualquier otra persona distinta a los indicados. Si Usted no es uno de los destinatarios, cualquier duplicación, reproducción, distribución, así como cualquier uso de la información contenida en él o cualquiera otra acción u omisión tomada en relación con el mismo, puede estar prohibido y ser ilegal. En dicho caso, por favor notifíquelo al remitente y proceda a la eliminación de este correo electrónico, así como de sus adjuntos si los hubiere.</p>
                             </td>
-                        </tr>
-                    </table>
-                </div>
-            `;
+                          </tr>
+                         </table>
+<!-- Espaciador fuerte para evitar superposición en Outlook/iOS -->
+<table cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+    <td height="0" style="font-size:0; line-height:0;">&nbsp;</td>
+  </tr>
+</table>
+
+<!-- Separador visual solo visible en Outlook -->
+<!--[if mso]>
+<hr style="border:none; border-top:solid 1px #e0e0e0; height:1px; margin-top:10px;">
+<![endif]-->
+        </div>
+      </td>
+    </tr>
+</table>
+
+`;
 
             signaturePreview.innerHTML = signatureHTML;
             document.getElementById('signatureOutput').innerText = signatureHTML.trim();
